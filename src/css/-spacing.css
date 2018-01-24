@@ -1,0 +1,15 @@
+.cart {
+
+  &--p0125  { padding: calc(var(--unit) / 8); }
+  &--p025   { padding: calc(var(--unit) / 4); }
+  &--p05    { padding: calc(var(--unit) / 2); }
+  &--p1     { padding: var(--unit); }
+
+  &--pr0    { padding-right: 0; }
+
+  &--mr0125  { margin-right: calc(var(--unit) / 8); }
+  &--mr025   { margin-right: calc(var(--unit) / 4); }
+  &--mr05    { margin-right: calc(var(--unit) / 2); }
+  &--mr1     { margin-right: var(--unit); }
+
+}

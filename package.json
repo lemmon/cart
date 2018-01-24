@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "abrusco": "^0.2.0",
+    "bel": "^5.1.5",
+    "browserify": "^15.2.0",
+    "md5": "^2.2.1",
+    "nanomorph": "^5.1.3",
+    "watchify": "^3.9.0"
+  },
+  "scripts": {
+    "serve": "serve develop",
+    "w:app": "watchify src/app/index.js -o develop/bundle.js --verbose",
+    "w:css": "abrusco src/css/master.css -o develop/bundle.css --watch",
+    "w": "npm run w:app & npm run w:css"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017
+    }
+  }
+}

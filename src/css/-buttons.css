@@ -1,0 +1,62 @@
+.cart {
+
+  &--button {
+    display: block;
+    appearance: none;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: 1;
+    outline: 0 !important;
+    cursor: pointer;
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  }
+
+  &--button {
+    width: 100%;
+    height: var(--button-height);
+    padding: 0 var(--button-padding);
+    border: var(--button-border-width) solid var(--color);
+    background-color: transparent;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: var(--button-lineheight);
+    text-align: center;
+    &:focus,
+    &:hover {
+      background-color: color(var(--color) alpha(80%));
+      border-color: transparent;
+      color: var(--background-color);
+    }
+    &:active {
+      background-color: color(var(--color) alpha(100%));
+    }
+    &:focus {
+      box-shadow: 0 0 0 4px color(var(--color) alpha(10%));
+    }
+    &-primary {
+      background-color: var(--color);
+      border-color: transparent;
+      color: var(--background-color);
+    }
+  }
+
+}
+
+:root {
+
+  --button-height: var(--field-height, 48px);
+  --button-lineheight: calc(var(--button-height) - var(--button-border-width) * 2);
+  --button-border-width: var(--field-border-width, 2px);
+  --button-padding: calc(var(--field-padding, 1rem) * 2);
+
+}

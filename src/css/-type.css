@@ -1,0 +1,13 @@
+.cart {
+
+  &--al { text-align: left; }
+  &--ar { text-align: right; }
+  &--ac { text-align: center; }
+
+  &--bold { font-weight: bold; }
+
+  &--small { font-size: 0.75rem; } /* 12 */
+
+  &--lh { line-height: 1.25; } /* 20 */
+
+}

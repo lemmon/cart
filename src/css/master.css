@@ -1,0 +1,50 @@
+@import '-cart';
+@import '-links';
+@import '-fields';
+@import '-buttons';
+@import '-type';
+@import '-grid';
+@import '-spacing';
+
+:root {
+  --unit: 16px;
+  --font-size: var(--unit);
+  --color: #040404;
+  --background-color: #ffeb3b;
+  --link-color: #2196f3;
+}
+
+.p0125 { padding: 0.125rem; }
+
+.image {
+  & svg,
+  & img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.cart {
+  &--gray {
+    color: color(var(--color) alpha(50%));
+  }
+}
+
+.cart {
+  &--remove {
+    visibility: hidden;
+    background-image: inline('img/trash.svg');
+    background-size: 12px 12px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    text-indent: 100%;
+    overflow: hidden;
+    opacity: .2;
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &--product:hover &--remove {
+    visibility: visible;
+  }
+}

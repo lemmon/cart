@@ -1,0 +1,9 @@
+#!/bin/sh
+cd "$(dirname $0)/.."
+BASE_DIR=`pwd`
+
+npm i
+
+mkdir -pv develop
+ln -s ../src/html/index.html develop/index.html
+ln -s ../node_modules/abrusco/css/abrusco.min.css develop/abrusco.css
