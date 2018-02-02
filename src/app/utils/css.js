@@ -1,5 +1,7 @@
-const css = (...arr) => arr.map(c => 'cart--' + c).join(' ')
+const css = (...arr) => arr.filter( c => !!c ).map( css.className ).join(' ')
 
-css.class = (name) => `.cart--${name}`
+css.className = (name) => `cart--${name}`
+
+css.selector = (name) => `.${css.className(name)}`
 
 module.exports = css

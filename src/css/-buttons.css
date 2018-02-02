@@ -22,41 +22,62 @@
 
   &--button {
     width: 100%;
-    height: var(--button-height);
-    padding: 0 var(--button-padding);
-    border: var(--button-border-width) solid var(--color);
+    height: var(--field-height);
+    padding: 0 var(--field-padding);
+    border: var(--field-border-width) solid var(--color);
     background-color: transparent;
     white-space: nowrap;
     text-transform: uppercase;
     font-weight: 500;
-    line-height: var(--button-lineheight);
+    line-height: var(--field-lineheight);
     text-align: center;
-    &:focus,
-    &:hover {
-      background-color: color(var(--color) alpha(80%));
-      border-color: transparent;
-      color: var(--background-color);
-    }
-    &:active {
-      background-color: color(var(--color) alpha(100%));
-    }
-    &:focus {
-      box-shadow: 0 0 0 4px color(var(--color) alpha(10%));
-    }
     &-primary {
       background-color: var(--color);
       border-color: transparent;
       color: var(--background-color);
     }
+    &:focus:not(:disabled),
+    &:hover:not(:disabled) {
+      background-color: color(var(--color) alpha(80%));
+      border-color: transparent;
+      color: var(--background-color);
+    }
+    &:focus:not(:disabled) {
+      box-shadow: 0 0 0 4px color(var(--color) alpha(10%));
+    }
+    &:active:not(:disabled) {
+      background-color: color(var(--color) alpha(100%));
+    }
+    &[data-loading]:disabled {
+      position: relative;
+      text-indent: -9999px;
+      cursor: progress;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1.5em;
+        height: 1.5em;
+        margin-left: -.75rem;
+        margin-top: -.75rem;
+        border: 2px solid;
+        border-color: currentColor currentColor transparent transparent;
+        border-radius: 100%;
+        animation: rotate .5s linear infinite;
+      }
+    }
+    &:disabled:not([data-loading]) {
+      cursor: not-allowed;
+      opacity: .5;
+      filter: grayscale(50%);
+    }
   }
 
 }
 
-:root {
-
-  --button-height: var(--field-height, 48px);
-  --button-lineheight: calc(var(--button-height) - var(--button-border-width) * 2);
-  --button-border-width: var(--field-border-width, 2px);
-  --button-padding: calc(var(--field-padding, 1rem) * 2);
-
+@keyframes rotate {
+    0% { transform: rotateZ(-360deg); }
+  100% { transform: rotateZ(0deg); }
 }

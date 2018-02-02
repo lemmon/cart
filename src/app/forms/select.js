@@ -8,8 +8,8 @@ module.exports = (props) => {
   const value = props.value
   const selected = props.options.filter( item => item[0] === value )[0]
   return html`
-    <div class=${css('select')}>
-      <select class=${css('field')} onchange=${e => onchange(e, props)}>
+    <div class=${css('select', props.disabled && 'disabled', props.error && 'error')}>
+      <select class=${css('field')} ${props.disabled && `disabled` || ``} onchange=${e => onchange(e, props)}>
         <option></option>
         ${props.options.map(([ id, caption ]) => html`
           <option value=${id} ${id == value && `selected` || ``}>${caption}</option>
@@ -27,12 +27,12 @@ module.exports = (props) => {
 }
 
 function el(target) {
-  return target.closest(css.class('select'))
+  return target.closest(css.selector('select'))
 }
 
 function onchange(e, props) {
   const value = e.target.value
   const selected = props.options.filter( item => item[0] === value )[0]
-  el(e.target).querySelector(css.class('select-value')).innerHTML = selected && selected[1] || ``
+  el(e.target).querySelector(css.selector('select-value')).innerHTML = selected && selected[1] || ``
   if (props.onchange) props.onchange(value)
 }
