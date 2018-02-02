@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <title>Shopping Cart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="abrusco.css">
-  <link rel="stylesheet" href="bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/abrusco@0.4.0/css/abrusco.min.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
-<body class="page p1">
+<body class="col py1 sd-p1">
 
   <header class="p1">
 
-    <h1 class="h2 fw700">Shopping Cart Demo</h1>
+    <h1 class="h2 lh2 fw700">Shopping Cart Demo</h1>
 
   </header>
-  <main class="page-main">
+  <main class="span1">
 
     <div class="products">
-      <div class="grid grid3">
+      <div class="max72 grid sd-grid2 md-grid3">
         <article class="p05">
           <div class="p025">
             <div class="p025">
@@ -108,7 +108,7 @@
 
   </footer>
 
-  <script src="bundle.js"></script>
+  <script src="cart.js"></script>
   <script>
   cart.on('numberFormat', (n, c = 0, d = ',', t = ' ') => {
     var c = isNaN(c = Math.abs(c)) ? 2 : c,
