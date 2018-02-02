@@ -12,8 +12,8 @@ module.exports = (item) => html`
   <article class=${css('product')} data-hash=${item.hash}>
     <div class=${css('row')}>
       <div class=${css('p025')}>
-        <figure class="image bg-black-20" style="width: 3rem;">
-          <svg viewBox="0 0 3 4"></svg>
+        <figure style="width: 3rem;">
+          <svg class="image bg-black-20" viewBox="0 0 3 4"></svg>
         </figure>
       </div>
       <div class=${css('span1')}>

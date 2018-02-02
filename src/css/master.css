@@ -16,9 +16,8 @@
 
 .p0125 { padding: 0.125rem; }
 
-.image {
-  & svg,
-  & img {
+.cart {
+  &--image {
     display: block;
     width: 100%;
   }
