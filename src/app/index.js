@@ -1,3 +1,9 @@
+window.addEventListener('click', e => {
+  if (e.target.classList.contains('showcart')) {
+    e.preventDefault()
+    cart.show()
+  }
+})
 window.addEventListener('submit', e => {
   if (e.target.classList.contains('addtocart')) {
     e.preventDefault()
@@ -6,7 +12,7 @@ window.addEventListener('submit', e => {
       name: formData.get('name'),
       price: formData.get('price'),
     })
-    cart.render()
+    cart.show()
   }
 })
 document.addEventListener('DOMContentLoaded', () => {

@@ -1,7 +1,7 @@
 .cart {
 
   &--field {
-    cursor: pointer;
+    cursor: inherit;
     &-padding {
       padding: 0 var(--field-padding);
     }

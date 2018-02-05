@@ -7,6 +7,7 @@ const shipping = require('./shipping')
 const payment = require('./payment')
 const summary = require('./summary')
 const render = require('./render')
+const state = require('./state')
 
 const cart = Object.assign({
   init: () => {
@@ -15,6 +16,18 @@ const cart = Object.assign({
   },
   render: () => {
     morph(cart.DOM, render())
+  },
+  show: () => {
+    state.open = true
+    cart.render()
+  },
+  hide: () => {
+    state.open = false
+    state.validated = false
+    cart.render()
+  },
+  open: () => {
+    return state.open
   },
   on: (name, cb) => {
     assert.equal(typeof name, 'string', 'event name should be a string')

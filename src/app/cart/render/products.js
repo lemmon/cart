@@ -3,9 +3,8 @@ const bus = require('../../bus')
 const css = require('../../utils/css')
 const select = require('../../forms/select')
 const radio = require('../../forms/radio')
+const state = require('../state')
 const renderProduct = require('./product')
-
-const state = {}
 
 module.exports = () => html`
   <div class=${css('col', 'p05')}>
