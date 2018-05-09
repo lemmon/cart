@@ -2,14 +2,13 @@ const html = require('nanohtml')
 const bus = require('../../bus')
 const css = require('../../utils/css')
 const {
-  findProductByHash,
   increaseProductCount,
   decreaseProductCount,
   removeProduct,
 } = require('../products')
 
 module.exports = (item) => html`
-  <article class=${css('product')} data-hash=${item.hash}>
+  <article class=${css('product')}>
     <div class=${css('row')}>
       <div class=${css('p025')}>
         <figure style="width: 3rem;">
@@ -50,9 +49,3 @@ module.exports = (item) => html`
     </div>
   </article>
 `
-
-/*
-function findProductByEventTarget(target) {
-  return findProductByHash(target.closest('[data-hash]').dataset.hash)
-}
-*/
