@@ -116,34 +116,32 @@
     j = (j = i.length) > 3 ? j % 3 : 0;
     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
   })
-  cart.on('unitFormat', (x) => {
-    return `${x}/ks`
-  })
+  cart.on('unitFormat', (x) => `${x}/ks`)
   cart.addCountry('SK', 'Slovensko');
   cart.addCountry('CZ', 'Česko');
-  cart.addShippingMethod({
+  cart.addDuty('shipping', {
     id: 'sm:sk',
     name: 'UPS → SK',
-    price: 2,
+    price: (cart) => 3,
     countries: ['SK'],
   });
-  cart.addShippingMethod({
+  cart.addDuty('shipping', {
     id: 'sm:cz',
     name: 'UPS → CZ',
     price: 4,
     countries: ['CZ'],
   });
-  cart.addShippingMethod({
+  cart.addDuty('shipping', {
     id: 'sm:eu',
     name: 'UPS → EU',
     price: 7,
   });
-  cart.addPaymentMethod({
+  cart.addDuty('payment', {
     id: 'pm:do',
     name: 'Dobierka',
     price: 2.50,
   });
-  cart.addPaymentMethod({
+  cart.addDuty('payment', {
     id: 'pm:pr',
     name: 'Prevod na účet',
     price: 1.50,
