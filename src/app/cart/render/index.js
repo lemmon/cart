@@ -7,13 +7,9 @@ const state = require('../state')
 const renderEmpty = require('./empty')
 const renderProducts = require('./products')
 
-function render() {
-  return html`
-    <div class=${css(true, state.open && `open`)}>
-      <div class=${css('overlay')} onclick=${cart.hide}></div>
-      <div class=${css('container')}>${hasProducts() && renderProducts() || renderEmpty()}</div>
-    </div>
-  `
-}
-
-module.exports = render
+module.exports = () => html`
+  <div class=${css(true, state.open && `open`)}>
+    <div class=${css('overlay')} onclick=${cart.hide}></div>
+    <div class=${css('container')}>${hasProducts() && renderProducts() || renderEmpty()}</div>
+  </div>
+`
