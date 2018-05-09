@@ -1,4 +1,4 @@
-const html = require('bel')
+const html = require('nanohtml')
 const bus = require('../../bus')
 const css = require('../../utils/css')
 const {

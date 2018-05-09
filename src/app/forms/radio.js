@@ -1,4 +1,4 @@
-const html = require('bel')
+const html = require('nanohtml')
 const assert = require('assert')
 const css = require('../utils/css')
 
