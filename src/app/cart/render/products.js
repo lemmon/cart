@@ -1,8 +1,10 @@
 const html = require('nanohtml')
 const bus = require('../../bus')
 const css = require('../../utils/css')
+const heading = require('../../partials/heading')
 const select = require('../../forms/select')
 const state = require('../state')
+const i18n = require('../i18n')
 const renderProduct = require('./product')
 const renderDuty = require('./duty')
 
@@ -12,15 +14,15 @@ module.exports = () => html`
       ${cart.allProducts().map(renderProduct)}
     </div>
     <div class=${css('row', 'justify-between', 'bold')}>
-      <div class=${css('p05')}>Products Total</div>
+      <div class=${css('p05')}>${i18n.t('caption.products.total')}</div>
       <div class=${css('p05')}>${bus.numberFormat(cart.productsTotal(), 2)}</div>
     </div>
     <div class="${css('p05')}">
-      <button class=${css('button')}>Checkout</button>
+      <button class=${css('button')}>${i18n.t('action.checkout')}</button>
     </div>
     <div class="${css('p025')}">
       ${select({
-        placeholder: `Country`,
+        placeholder: i18n.t('caption.country'),
         options: cart.allCountries(),
         value: cart.getShipping().country,
         disabled: !!state.working,
@@ -34,12 +36,16 @@ module.exports = () => html`
       })}
     </div>
     ${cart.getDutyTypes().map(name => html`
-      <div class=${css('p025')}>
-        ${renderDuty(name)}
+      <div>
+        ${heading(i18n.t(`duty.${name}`))}
+        <div class=${css('p025')}>
+          ${renderDuty(name)}
+        </div>
       </div>
     `)}
+    ${heading(i18n.t('caption.summary'))}
     <div class=${css('row', 'justify-between', 'bold')}>
-      <div class=${css('p05')}>Grand Total</div>
+      <div class=${css('p05')}>${i18n.t('caption.order.total')}</div>
       <div class=${css('p05')}>${bus.numberFormat(cart.grandTotal(), 2)}</div>
     </div>
     <div class="${css('p05')}">
@@ -48,7 +54,7 @@ module.exports = () => html`
         ${state.working && `data-loading` || ``}
         class=${css('button', 'button-primary')}
         onclick=${placeOrder}
-      >Place Order</button>
+      >${i18n.t('action.order.place')}</button>
     </div>
   </div>
 `

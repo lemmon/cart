@@ -6,6 +6,7 @@ const countries = require('./countries')
 const shipping = require('./shipping')
 const duties = require('./duties')
 const summary = require('./summary')
+const i18n = require('./i18n')
 const render = require('./render')
 const state = require('./state')
 
@@ -38,6 +39,8 @@ const cart = Object.assign({
     assert.equal(typeof cb, 'function', 'callback should be a function')
     cb()
   },
-}, products, countries, shipping, duties, summary)
+}, products, countries, shipping, duties, summary, {
+  i18n,
+})
 
 module.exports = cart

@@ -2,7 +2,6 @@ const guid = require('../utils/guid')
 const store = require('./store')
 
 const duties = {}
-const captions = {}
 const data = load()
 
 module.exports.addDuty = (name, duty) => {
@@ -22,14 +21,6 @@ module.exports.addDuty = (name, duty) => {
   }
   duties[name].add(ELLO)
 }
-
-module.exports.addDutyCaption = (name, caption) => {
-  captions[name] = caption
-}
-
-module.exports.getDutyCaption = (name, caption) => (
-  captions[name]
-)
 
 module.exports.getDutyTypes = () => (
   Object.keys(duties)
