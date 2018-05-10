@@ -119,6 +119,8 @@
   cart.on('unitFormat', (x) => `${x}/ks`)
   cart.addCountry('SK', 'Slovensko');
   cart.addCountry('CZ', 'Česko');
+  cart.addDutyCaption('shipping', 'Poštovné')
+  cart.addDutyCaption('payment', 'Platba')
   cart.addDuty('shipping', {
     id: 'sm:sk',
     name: 'UPS → SK',
