@@ -1,34 +1,35 @@
-.cart {
-  &--overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-color: color(var(--color) alpha(50%));
-    display: none;
+.cart--overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: color-mod(var(--color) alpha(50%));
+  display: none;
+}
+
+.cart--container {
+  position: fixed;
+  right: -24rem;
+  top: 0;
+  bottom: 0;
+  width: 24rem;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: right .2s;
+  & > * {
+    flex: 1;
   }
-  &--container {
-    position: fixed;
-    right: -24rem;
-    top: 0;
-    bottom: 0;
-    width: 24rem;
-    background-color: var(--background-color);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    transition: right .2s;
-    & > * {
-      flex: 1;
-    }
-  }
-  &--open &--overlay {
-    display: block;
-  }
-  &--open &--container {
-    right: 0;
-  }
+}
+
+.cart--open .cart--overlay {
+  display: block;
+}
+
+.cart--open .cart--container {
+  right: 0;
 }

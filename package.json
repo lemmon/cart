@@ -8,7 +8,7 @@
   "scripts": {
     "serve": "serve develop",
     "w:app": "watchify src/app/index.js -o develop/cart.js --verbose",
-    "w:css": "abrusco src/css/master.css -o develop/cart.css --watch",
+    "w:css": "abrusco src/css/master.css -o develop/cart.css --novars --watch",
     "w": "npm run w:app & npm run w:css"
   },
   "eslintConfig": {

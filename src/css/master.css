@@ -24,35 +24,28 @@
 
 .p0125 { padding: 0.125rem; }
 
-.cart {
-  &--image {
-    display: block;
-    width: 100%;
+.cart--image {
+  display: block;
+  width: 100%;
+}
+
+.cart--gray { opacity: .5; }
+.cart--error { color: color-mod(var(--color-red) alpha(100%)); }
+
+.cart--remove {
+  visibility: hidden;
+  background-image: inline('img/trash.svg');
+  background-size: 12px 12px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  text-indent: 100%;
+  overflow: hidden;
+  opacity: .2;
+  &:hover {
+    opacity: .8;
   }
 }
 
-.cart {
-  &--gray { opacity: .5; }
-  &--error { color: color(var(--color-red) alpha(100%)); }
-}
-
-.cart {
-
-  &--remove {
-    visibility: hidden;
-    background-image: inline('img/trash.svg');
-    background-size: 12px 12px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    text-indent: 100%;
-    overflow: hidden;
-    opacity: .2;
-    &:hover {
-      opacity: .8;
-    }
-  }
-  &--product:hover &--remove {
-    visibility: visible;
-  }
-
+.cart--product:hover .cart--remove {
+  visibility: visible;
 }
