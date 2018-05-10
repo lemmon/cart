@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "bel": "^5.1.6",
     "md5": "^2.2.1",
     "nanohtml": "^1.2.4",
     "nanomorph": "^5.1.3"
