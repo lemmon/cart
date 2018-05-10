@@ -8,7 +8,7 @@ module.exports = (props) => {
   const value = props.value
   const selected = props.options.filter( item => item[0] === value )[0]
   return html`
-    <div class=${css('select', !props.disabled && `a-anchor` || 'disabled', props.error && 'error')}>
+    <div class=${css('p025', 'select', !props.disabled && `a-anchor` || 'disabled', props.error && 'error')}>
       <select class=${css('field')} ${props.disabled && `disabled`} onchange=${e => onchange(e, props)}>
         <option></option>
         ${props.options.map(([ id, caption ]) => html`

@@ -18,7 +18,7 @@ module.exports = () => html`
     <div class="${css('p05')}">
       <button class=${css('button')}>Checkout</button>
     </div>
-    <div class="${css('p05')}">
+    <div class="${css('p025')}">
       ${select({
         placeholder: `Country`,
         options: cart.allCountries(),
