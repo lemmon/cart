@@ -9,6 +9,22 @@ const {
   setDuty,
 } = require('../duties')
 
+const renderDuty = (props) => (
+  props.options.map(item => radio({
+    name: props.name,
+    caption: html`
+      <div class=${css('span1', 'row', 'justify-between')}>
+        <div class=${css('p025', 'lh')}><span class=${css(!props.disabled && 'a-ul')}>${item.name}</span></div>
+        <div class=${css('p025', 'lh')}>${bus.numberFormat(item.price(), 2)}</div>
+      </div>
+    `,
+    checked: props.selected === item.id,
+    error: props.error,
+    disabled: props.disabled,
+    onchange: () => props.onchange(item),
+  }))
+)
+
 module.exports = (name) => {
   const duty = getSelectedDuty(name)
   return renderDuty({
@@ -22,20 +38,4 @@ module.exports = (name) => {
       cart.render()
     },
   })
-}
-
-function renderDuty(props) {
-  return props.options.map(item => radio({
-    name: props.name,
-    caption: html`
-      <div class=${css('span1', 'row', 'justify-between')}>
-        <div class=${css('p025', 'lh')}><span class=${css(!props.disabled && 'a-ul')}>${item.name}</span></div>
-        <div class=${css('p025', 'lh')}>${bus.numberFormat(item.price(), 2)}</div>
-      </div>
-    `,
-    checked: props.selected === item.id,
-    error: props.error,
-    disabled: props.disabled,
-    onchange: () => props.onchange(item),
-  }))
 }
