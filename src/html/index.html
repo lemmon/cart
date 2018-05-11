@@ -119,12 +119,10 @@
   cart.on('unitFormat', (x) => `${x}/ks`)
   cart.addCountry('SK', 'Slovensko');
   cart.addCountry('CZ', 'Česko');
-  cart.addDutyCaption('shipping', 'Poštovné')
-  cart.addDutyCaption('payment', 'Platba')
   cart.addDuty('shipping', {
     id: 'sm:sk',
-    name: 'UPS → SK',
-    price: (cart) => 3,
+    name: 'Slovenská pošta',
+    price: (cart) => 1,
     countries: ['SK'],
   });
   cart.addDuty('shipping', {
@@ -135,19 +133,30 @@
   });
   cart.addDuty('shipping', {
     id: 'sm:eu',
-    name: 'UPS → EU',
+    name: 'Kuriér DPD',
     price: 7,
-  });
-  cart.addDuty('payment', {
-    id: 'pm:do',
-    name: 'Dobierka',
-    price: 2.50,
   });
   cart.addDuty('payment', {
     id: 'pm:pr',
     name: 'Prevod na účet',
-    price: 1.50,
+    price: 0,
   });
+  cart.addDuty('payment', {
+    id: 'pm:do',
+    name: 'Dobierka',
+    price: 1,
+  });
+  cart.i18n.plural(n => 1)
+  cart.i18n.translate({
+    'duty.shipping': 'Poštovné',
+    'duty.payment': 'Platba',
+    'caption.country': 'Krajina',
+    'caption.summary': 'Súhrn',
+    'caption.products.total': 'Spolu',
+    'caption.order.total': 'Celkom s DPH',
+    'action.checkout': 'K pokladni',
+    'action.order.place': 'Dokončiť nákup',
+  })
   </script>
 
 </body>
