@@ -9,3 +9,8 @@
 .cart--mr025   { margin-right: calc(var(--unit) / 4); }
 .cart--mr05    { margin-right: calc(var(--unit) / 2); }
 .cart--mr1     { margin-right: var(--unit); }
+
+.cart--mb0125  { margin-bottom: calc(var(--unit) / 8); }
+.cart--mb025   { margin-bottom: calc(var(--unit) / 4); }
+.cart--mb05    { margin-bottom: calc(var(--unit) / 2); }
+.cart--mb1     { margin-bottom: var(--unit); }

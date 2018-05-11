@@ -44,7 +44,7 @@ module.exports = () => html`
       </div>
     `)}
     ${heading(i18n.t('caption.summary'))}
-    <div class=${css('row', 'justify-between', 'bold')}>
+    <div class=${css('row', 'justify-between', 'bold', 'mb05')}>
       <div class=${css('p05')}>${i18n.t('caption.order.total')}</div>
       <div class=${css('p05')}>${bus.numberFormat(cart.grandTotal(), 2)}</div>
     </div>
@@ -70,13 +70,32 @@ function placeOrder() {
   state.validated = true
   if (state.valid) {
     state.working = true
-    setTimeout(() => {
+    dispatch('order', data).then(() => {
       state.working = false
       cart.render()
-    }, 500)
+    })
     state.validated = false
   }
   cart.render()
 }
 
+function dispatch(name, data) {
+  return fetch('order.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({ name, data }),
+    credentials: 'include',
+  }).then(res => (
+    res.json()
+  )).then(res => {
+    if (res.errors) {
+      return Promise.reject(res.errors)
+    }
+    console.log(res)
+  }).catch(err => {
+    console.error(err)
+  })
 }
