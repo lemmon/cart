@@ -1,5 +1,6 @@
 const md5 = require('md5')
 const store = require('./store')
+const state = require('./state')
 
 const products = loadProducts()
 
@@ -27,6 +28,7 @@ function addProduct(props) {
     name,
     price,
     count: 0,
+    increment: 1,
     hash,
   })
   product.count += count
@@ -35,14 +37,16 @@ function addProduct(props) {
   return product
 }
 
-function increaseProductCount(product, count = 1) {
-  product.count += count
+function increaseProductCount(product, increment) {
+  if (!increment) increment = product.increment
+  product.count += increment
   product.total = product.count * product.price
   saveProducts()
 }
 
-function decreaseProductCount(product, count = 1) {
-  product.count = product.count > count + 1 ? product.count - count : 1
+function decreaseProductCount(product, increment) {
+  if (!increment) increment = product.increment
+  product.count = product.count > increment * 2 ? product.count - increment : increment
   product.total = product.count * product.price
   saveProducts()
 }
@@ -79,9 +83,9 @@ function productsTotal() {
 function loadProducts() {
   try {
     const products = store.load('products')
-    return Array.isArray(products) && new Set(products) || new Set()
+    return Array.isArray(products) && new Set(products) || new Set
   } catch (e) {
-    return new Set()
+    return new Set
   }
 }
 
