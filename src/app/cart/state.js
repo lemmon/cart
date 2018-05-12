@@ -1,3 +1,4 @@
 module.exports = {
-  open: true,
+  open: false,
+  step: 0,
 }

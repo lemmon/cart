@@ -17,13 +17,25 @@
   bottom: 0;
   width: 24rem;
   background-color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
   transition: right .2s;
+  overflow: hidden;
+}
+
+.cart--slider {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: left .1s;
   & > * {
-    flex: 1;
+    flex: 0 0 100%;
+    width: 100%;
+    overflow-y: auto;
   }
+  &.cart--step0 { left: 0%; }
+  &.cart--step1 { left: -100%; }
 }
 
 .cart--open .cart--overlay {

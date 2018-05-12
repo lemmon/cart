@@ -20,6 +20,7 @@ const cart = Object.assign({
   },
   show: () => {
     state.open = true
+    state.step = 0
     cart.render()
   },
   hide: () => {

@@ -1,5 +1,19 @@
-.cart--row { display: flex; flex-direction: row; }
-.cart--col { display: flex; flex-direction: column; }
+.cart--row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart--col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart--row,
+.cart--col {
+  & > * {
+    flex-shrink: 0;
+  }
+}
 
 .cart--items-start    { align-items: flex-start; }
 .cart--items-end      { align-items: flex-end; }
