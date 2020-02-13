@@ -3,7 +3,25 @@
 .cart--p05    { padding: calc(var(--unit) / 2); }
 .cart--p1     { padding: var(--unit); }
 
-.cart--pr0    { padding-right: 0; }
+.cart--px0125  { padding-left: calc(var(--unit) / 8); padding-right: calc(var(--unit) / 8); }
+.cart--px025   { padding-left: calc(var(--unit) / 4); padding-right: calc(var(--unit) / 4); }
+.cart--px05    { padding-left: calc(var(--unit) / 2); padding-right: calc(var(--unit) / 2); }
+.cart--px1     { padding-left: var(--unit); padding-right: var(--unit); }
+
+.cart--pt0125  { padding-top: calc(var(--unit) / 8); }
+.cart--pt025   { padding-top: calc(var(--unit) / 4); }
+.cart--pt05    { padding-top: calc(var(--unit) / 2); }
+.cart--pt1     { padding-top: var(--unit); }
+
+.cart--pb0125  { padding-bottom: calc(var(--unit) / 8); }
+.cart--pb025   { padding-bottom: calc(var(--unit) / 4); }
+.cart--pb05    { padding-bottom: calc(var(--unit) / 2); }
+.cart--pb1     { padding-bottom: var(--unit); }
+
+.cart--mt0125  { margin-top: calc(var(--unit) / 8); }
+.cart--mt025   { margin-top: calc(var(--unit) / 4); }
+.cart--mt05    { margin-top: calc(var(--unit) / 2); }
+.cart--mt1     { margin-top: var(--unit); }
 
 .cart--mr0125  { margin-right: calc(var(--unit) / 8); }
 .cart--mr025   { margin-right: calc(var(--unit) / 4); }

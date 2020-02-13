@@ -1,6 +1,5 @@
 @import '-cart';
 @import '-links';
-@import '-forms';
 @import '-buttons';
 @import '-type';
 @import '-grid';
@@ -11,14 +10,8 @@
   --unit: 16px;
   --font-size: var(--unit);
   --color: #040404;
-  --color-red: #f44336;
   --background-color: #ffeb3b;
   --link-color: #2196f3;
-
-  --field-height: 48px;
-  --field-lineheight: calc(var(--field-height) - var(--field-border-width) * 2);
-  --field-border-width: var(--field-border-width, 2px);
-  --field-padding: calc(var(--unit) - var(--field-border-width));
 
 }
 
@@ -30,7 +23,6 @@
 }
 
 .cart--gray { color: color-mod(var(--color) alpha(50%)); }
-.cart--error { color: color-mod(var(--color-red) alpha(100%)); }
 
 .cart--heading {
   text-transform: uppercase;
