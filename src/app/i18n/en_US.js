@@ -1,7 +1,6 @@
 module.exports = {
-  'action.checkout': 'Checkout',
-  'action.shopping.continue': 'Continue Shopping',
-  'caption.products': 'Products',
-  'caption.products.total': 'Products Total',
-  'caption.summary': 'Summary',
+  'action.close': 'close',
+  'caption.checkout': 'Checkout',
+  'caption.total': 'Products Total',
+  'cart.empty': 'Shopping cart is empty.',
 }

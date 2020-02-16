@@ -1,77 +1,28 @@
-.cart--button {
+.cart__button {
   display: block;
   appearance: none;
   margin: 0;
-  border: var(--field-border-width) solid var(--color);
-  padding: 0 var(--field-padding);
+  border: 0;
+  padding: 0;
   width: 100%;
-  height: var(--field-height);
   color: inherit;
   background-color: transparent;
   font-family: inherit;
   font-size: inherit;
-  text-transform: uppercase;
-  font-weight: 500;
-  line-height: var(--field-lineheight);
+  text-transform: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   text-align: center;
-  outline: 0 !important;
+  outline: 0;
   cursor: pointer;
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
-  &:focus:not(:disabled),
-  &:hover:not(:disabled) {
-    background-color: color-mod(var(--color) alpha(80%));
-    border-color: transparent;
-    color: var(--background-color);
-  }
-  &:focus:not(:disabled) {
-    box-shadow: 0 0 0 4px color-mod(var(--color) alpha(10%));
-  }
-  &:active:not(:disabled) {
-    background-color: color-mod(var(--color) alpha(100%));
-  }
-  &[data-loading]:disabled {
-    position: relative;
-    text-indent: -9999px;
-    cursor: progress;
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 1.5em;
-      height: 1.5em;
-      margin-left: -.75rem;
-      margin-top: -.75rem;
-      border: 2px solid;
-      border-color: currentColor currentColor transparent transparent;
-      border-radius: 100%;
-      animation: rotate .5s linear infinite;
-    }
-  }
-  &:disabled:not([data-loading]) {
-    cursor: not-allowed;
-    opacity: .5;
-    filter: grayscale(50%);
-  }
 }
 
-.cart--button-primary {
-  background-color: var(--color);
-  border-color: transparent;
-  color: var(--background-color);
-}
-
-.cart--button-faded {
-  color: color-mod(var(--color) alpha(50%));
-  background-color: color-mod(var(--color) alpha(10%));
-  border-color: transparent;
-}
-
-@keyframes rotate {
-  0% { transform: rotateZ(-360deg); }
-  100% { transform: rotateZ(0deg); }
+.cart__button--primary {
+  color: #fff;
+  background-color: #040404;
+  padding: 1em;
 }

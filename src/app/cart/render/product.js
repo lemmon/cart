@@ -1,6 +1,5 @@
 const html = require('nanohtml')
 const bus = require('../../bus')
-const css = require('../../utils/css')
 const {
   increaseProductCount,
   decreaseProductCount,
@@ -8,44 +7,36 @@ const {
 } = require('../products')
 
 module.exports = (item) => html`
-  <article class=${css('product')}>
-    <div class=${css('row')}>
-      <div class=${css('p025')}>
-        <figure style="width: 3rem;">
-          <svg class="image bg-black-20" viewBox="0 0 3 4"></svg>
-        </figure>
-      </div>
-      <div class=${css('span1')}>
-        <div class=${css('row', 'justify-between')}>
-          <div class=${css('span1')}>
-            <div class=${css('p025', 'lh')}>${item.name}</div>
-            <div class=${css('row', 'items-center')}>
-              <a class=${css('anchor', 'gray', 'p025', 'lh')} href="#" onclick=${e => {
-                e.preventDefault()
-                decreaseProductCount(item)
-                cart.render()
-              }}>-</a>
-              ${bus.numberFormat(item.count)}
-              <a class=${css('anchor', 'gray', 'p025', 'lh')} href="#" onclick=${e => {
-                e.preventDefault()
-                increaseProductCount(item)
-                cart.render()
-              }}>+</a>
-            </div>
-          </div>
-          <div class=${css('p025', 'lh', 'ar')}>
-            <div class=${css('row', 'justify-end')}>
-              <a class=${css('anchor', 'gray', 'remove', 'mr025')} href="#" onclick=${e => {
-                e.preventDefault()
-                removeProduct(item)
-                cart.render()
-              }}>╳</a>
-              <div class=${css('bold')}>${bus.numberFormat(item.total, 2)}</div>
-            </div>
-            ${item.count > 1 && html`<div class=${css('small', 'gray')}>${bus.unitFormat(bus.numberFormat(item.price, 2))}</div>` || ``}
-          </div>
-        </div>
-      </div>
+  <article class="cart__product">
+    <figure class="cart__product__figure">
+      <a href="#"><svg class="cart__image" viewBox="0 0 1 1"></svg></a>
+    </figure>
+    <div class="cart__product__info">
+      <h1><a class="cart__ul:hover" href="#">${item.name}</a></h1>
+    </div>
+    <div class="cart__product__price">
+      <div class="cart__product__price__total">${bus.numberFormat(item.total, 2)}</div>
+      ${item.count > 1 ? html`<div class="cart__product__price__unit">${bus.unitFormat(bus.numberFormat(item.price, 2))}</div>` : ``}
+    </div>
+    <div class="cart__product__count">
+      <a class="cart__product__count__decrease" href="#" onclick=${e => {
+        e.preventDefault()
+        decreaseProductCount(item)
+        cart.render()
+      }}>-</a>
+      <div class="cart__product__count__value">${bus.numberFormat(item.count)}</div>
+      <a class="cart__product__count__increase" href="#" onclick=${e => {
+        e.preventDefault()
+        increaseProductCount(item)
+        cart.render()
+      }}>+</a>
+    </div>
+    <div class="cart__product__remove">
+      <button class="cart__button cart__product__remove__button" onclick=${e => {
+        e.preventDefault()
+        removeProduct(item)
+        cart.render()
+      }}>\u00D7</button>
     </div>
   </article>
 `

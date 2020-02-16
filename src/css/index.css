@@ -1,0 +1,9 @@
+@import '-cart';
+@import '-products';
+@import '-buttons';
+@import '-type';
+
+.cart {
+  font-size: 16px;
+  line-height: 1.5;
+}

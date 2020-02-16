@@ -1,9 +1,13 @@
-.cart--al { text-align: left; }
-.cart--ar { text-align: right; }
-.cart--ac { text-align: center; }
+.cart__ul,
+.cart__ul\:hover:hover {
+  text-decoration: underline;
+}
 
-.cart--bold { font-weight: bold; }
+.cart__dt {
+  float: left;
+  margin-right: 1em;
+}
 
-.cart--small { font-size: 0.75rem; } /* 12 */
-
-.cart--lh { line-height: 1.25; } /* 20 */
+.cart__dd {
+  text-align: right;
+}
