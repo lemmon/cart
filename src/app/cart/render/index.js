@@ -20,10 +20,20 @@ const renderEmpty = (cart) => html`
 module.exports = (cart) => html`
   <div class="cart ${state.open ? 'cart--open' : 'cart--closed'} ${cart.hasProducts() ? 'cart--products' : 'cart--empty'}">
     <div class="cart__overlay" onclick=${cart.hide}></div>
-    <div class="cart__container">${
-      cart.hasProducts()
-        ? renderProducts(cart)
-        : renderEmpty(cart)
-    }</div>
+    <div class="cart__container">
+      <div class="cart__header">
+        <div class="cart__close">
+          <button class="cart__button cart__close__button" onclick=${e => {
+            cart.hide()
+          }}>\u00D7</button>
+        </div>
+        <h1 class="cart__header__title">${i18n.t('caption.basket')}</h1>
+      </div>
+      <div class="cart__content">${
+        cart.hasProducts()
+          ? renderProducts(cart)
+          : renderEmpty(cart)
+      }</div>
+    </div>
   </div>
 `
