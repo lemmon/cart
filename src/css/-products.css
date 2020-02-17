@@ -24,20 +24,18 @@
   grid-gap: .5em;
 }
 
-.cart__product__link {
-  display: block;
-}
-
 .cart__product__info {
   grid-column-end: span 4;
   grid-row-start: 2;
   width: 100%;
-}
-
-.cart__product__info a {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  & > * {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  & a {
+    display: inline;
+  }
 }
 
 .cart__product__price {
@@ -98,7 +96,6 @@
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 1;
-    width: 100%;
   }
 
   .cart__product__price {
