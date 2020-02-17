@@ -10,10 +10,12 @@ const handleSubmit = e => {
   cart.render()
 }
 
-module.exports = () => html`
+module.exports = (cart) => html`
   <form class="cart__form" method=post onsubmit=${handleSubmit}>
     <div class="cart__products">
-      ${cart.allProducts().map(renderProduct)}
+      ${cart.allProducts().map(curr => (
+        renderProduct(curr, cart)
+      ))}
     </div>
     <div class="cart__summary">
       <div class="cart__dl">
