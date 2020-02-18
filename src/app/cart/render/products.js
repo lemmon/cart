@@ -1,5 +1,5 @@
 const html = require('nanohtml')
-const bus = require('../../bus')
+const format = require('../../utils/format')
 const state = require('../state')
 const i18n = require('../i18n')
 const renderProduct = require('./product')
@@ -20,7 +20,7 @@ module.exports = (cart) => html`
     <div class="cart__summary">
       <div class="cart__dl">
         <div class="cart__dt">${i18n.t('caption.total')}</div>
-        <div class="cart__dd">${bus.numberFormat(cart.productsTotal(), 2)}</div>
+        <div class="cart__dd">${i18n.t('price.currency', format.number(cart.productsTotal(), 2))}</div>
       </div>
       <div>
         <button

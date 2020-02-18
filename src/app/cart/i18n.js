@@ -1,15 +1,10 @@
 const phrases = require('../i18n/en_US.js')
-const data = {
-  plural: n => n !== 1 && 1 || 0,
-}
 
-module.exports.t = (name, fallback) => (
-  phrases[name] || fallback
+module.exports.t = (name, ...args) => (
+  phrases[name].replace(/%(\d+)/g, (str, p1) => (
+    args[parseInt(p1) - 1]
+  ))
 )
-
-module.exports.plural = (cb) => {
-  data.plural = cb
-}
 
 module.exports.translate = (newPhrases) => {
   Object.assign(phrases, newPhrases)

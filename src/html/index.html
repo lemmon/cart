@@ -107,23 +107,16 @@
 
   <script src="cart.js"></script>
   <script>
-  cart.on('numberFormat', (n, c = 0, d = ',', t = ' ') => {
-    var c = isNaN(c = Math.abs(c)) ? 2 : c,
-    d = d == undefined ? "." : d,
-    t = t == undefined ? "," : t,
-    s = n < 0 ? "-" : "",
-    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
-    j = (j = i.length) > 3 ? j % 3 : 0;
-    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-  })
-  cart.on('unitFormat', (x) => `${x}/ks`)
-  cart.i18n.plural(n => 1)
   cart.i18n.translate({
     'action.close': 'zatvoriť',
     'caption.basket': 'Nákupný košík',
     'caption.checkout': 'K pokladni',
     'caption.total': 'Spolu',
     'cart.empty': 'Nákupný košík je prázdny.',
+    'number.decimalPoint': ',',
+    'number.thousandsSeparator': ' ',
+    'price.currency': '%1 EUR',
+    'price.unit': '%1/ks',
   })
   </script>
 

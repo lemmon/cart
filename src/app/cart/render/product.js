@@ -1,5 +1,6 @@
 const html = require('nanohtml')
-const bus = require('../../bus')
+const format = require('../../utils/format')
+const i18n = require('../i18n')
 
 module.exports = (curr, cart) => html`
   <article class="cart__product">
@@ -10,8 +11,8 @@ module.exports = (curr, cart) => html`
       <h1><a class="cart__ul:hover" href="#">${curr.name}</a></h1>
     </div>
     <div class="cart__product__price">
-      <div class="cart__product__price__total">${bus.numberFormat(curr.total, 2)}</div>
-      ${curr.count > 1 ? html`<div class="cart__product__price__unit">${bus.unitFormat(bus.numberFormat(curr.price, 2))}</div>` : ``}
+      <div class="cart__product__price__total">${i18n.t('price.currency', format.number(curr.total, 2))}</div>
+      ${curr.count > 1 ? html`<div class="cart__product__price__unit">${i18n.t('price.unit', format.number(curr.price, 2))}</div>` : ``}
     </div>
     <div class="cart__product__count">
       <a class="cart__product__count__decrease" href="#" onclick=${e => {
@@ -19,7 +20,7 @@ module.exports = (curr, cart) => html`
         cart.decreaseProductCount(curr)
         cart.render()
       }}>-</a>
-      <div class="cart__product__count__value">${bus.numberFormat(curr.count)}</div>
+      <div class="cart__product__count__value">${format.number(curr.count)}</div>
       <a class="cart__product__count__increase" href="#" onclick=${e => {
         e.preventDefault()
         cart.increaseProductCount(curr)
