@@ -1,5 +1,5 @@
 const html = require('nanohtml')
-const format = require('../../utils/format')
+const format = require('../utils/format')
 const state = require('../state')
 const i18n = require('../i18n')
 const renderProduct = require('./product')

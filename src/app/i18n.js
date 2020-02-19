@@ -1,4 +1,4 @@
-const phrases = require('../i18n/en_US.js')
+const phrases = require('./i18n/en_US.js')
 
 module.exports.t = (name, ...args) => (
   phrases[name].replace(/%(\d+)/g, (str, p1) => (

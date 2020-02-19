@@ -1,5 +1,5 @@
 const html = require('nanohtml')
-const format = require('../../utils/format')
+const format = require('../utils/format')
 const i18n = require('../i18n')
 
 module.exports = (curr, cart) => html`
