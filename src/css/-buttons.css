@@ -21,6 +21,11 @@
   }
 }
 
+.cart__button:focus {
+  outline: 2px solid #040404;
+  outline-offset: 1px;
+}
+
 .cart__button--primary {
   color: #fff;
   background-color: #040404;
