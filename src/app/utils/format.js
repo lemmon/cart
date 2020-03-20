@@ -1,4 +1,4 @@
-const i18n = require('../cart/i18n')
+const i18n = require('../i18n')
 
 module.exports.number = (num, dec = 0) => (
   num
