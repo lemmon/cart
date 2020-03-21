@@ -14,7 +14,7 @@
     <div class="row justify-between items-center">
       <h1 class="h2 lh2 fw700">Shopping Cart Demo</h1>
       <div class="">
-        <a class="showcart" href="#">show cart</a>
+        <a href="#" data-cart-action="show">show cart</a>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
               <div class="p0125 lh3 ar">12,99</div>
             </div>
             <div class="p025">
-              <form class="addtocart" action="index.html" method="post">
+              <form data-cart-action="addtocart">
                 <input type="hidden" name="name" value="Product #1">
                 <input type="hidden" name="price" value="12.99">
                 <button type="submit" name="button">Add to cart</button>
@@ -51,7 +51,7 @@
               <div class="p0125 lh3 ar">0,99</div>
             </div>
             <div class="p025">
-              <form class="addtocart" action="index.html" method="post">
+              <form data-cart-action="addtocart">
                 <input type="hidden" name="name" value="Product #2">
                 <input type="hidden" name="price" value="0.99">
                 <button type="submit" name="button">Add to cart</button>
@@ -69,7 +69,7 @@
               <div class="p0125 lh3 ar">1099,00</div>
             </div>
             <div class="p025">
-              <form class="addtocart" action="index.html" method="post">
+              <form data-cart-action="addtocart">
                 <input type="hidden" name="name" value="Product #3 With Somewhat Long Title That Doesn't Fit In One Line">
                 <input type="hidden" name="price" value="1099.00">
                 <button type="submit" name="button">Add to cart</button>
@@ -87,7 +87,7 @@
               <div class="p0125 lh3 ar">9,99</div>
             </div>
             <div class="p025">
-              <form class="addtocart" action="index.html" method="post">
+              <form data-cart-action="addtocart">
                 <input type="hidden" name="name" value="Product #4">
                 <input type="hidden" name="price" value="9.99">
                 <button type="submit" name="button">Add to cart</button>

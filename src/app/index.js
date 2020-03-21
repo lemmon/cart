@@ -3,17 +3,17 @@ const cart = require('./cart')
 window.cart = cart
 
 window.addEventListener('click', e => {
-  if (!e.target || !e.target.classList.contains('showcart')) {
-    return
-  }
+  if (!e.target || !e.target.dataset.cartAction) return
   e.preventDefault()
-  cart.show()
+  switch (e.target.dataset.cartAction) {
+    case 'show':
+      cart[e.target.dataset.cartAction]()
+      return
+  }
 })
 
 window.addEventListener('submit', e => {
-  if (!e.target || !e.target.classList.contains('addtocart')) {
-    return
-  }
+  if (!e.target || e.target.dataset.cartAction !== 'addtocart') return
   e.preventDefault()
   const formData = new FormData(e.target)
   cart.addProduct({
