@@ -23,9 +23,12 @@ module.exports = (cart) => html`
     <div class="cart__container">
       <div class="cart__header">
         <div class="cart__close">
-          <button class="cart__button cart__close__button" onclick=${e => {
+          <button class="cart__button cart__close__button" aria-label="Close" onclick=${e => {
             cart.hide()
-          }}>\u00D7</button>
+          }}><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" fill="none">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y2="6" x2="18" y1="18" />
+          </svg></button>
         </div>
         <h1 class="cart__header__title">${i18n.t('caption.basket')}</h1>
       </div>

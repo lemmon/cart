@@ -26,6 +26,12 @@
   outline-offset: 1px;
 }
 
+.cart__button svg {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+}
+
 .cart__button--primary {
   color: #fff;
   background-color: #040404;
