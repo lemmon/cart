@@ -78,6 +78,12 @@
   text-align: center;
   background-color: rgba(4 4 4 / 10%);
   padding: .25em;
+  &:hover {
+    background-color: rgba(4 4 4 / 15%);
+  }
+  &:active {
+    background-color: rgba(4 4 4 / 20%);
+  }
 }
 
 .cart__product__count__value {
