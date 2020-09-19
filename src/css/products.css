@@ -15,7 +15,7 @@
 .cart__image {
   display: block;
   width: 7em;
-  background-color: rgba(4, 4, 4, .2);
+  background-color: rgba(4 4 4 / 20%);
 }
 
 .cart__product {
@@ -76,7 +76,7 @@
   display: block;
   width: auto;
   text-align: center;
-  background-color: rgba(4, 4, 4, .1);
+  background-color: rgba(4 4 4 / 10%);
   padding: .25em;
 }
 
@@ -84,7 +84,7 @@
   display: block;
   min-width: 2em;
   text-align: center;
-  background-color: rgba(4, 4, 4, .1);
+  background-color: rgba(4 4 4 / 10%);
   padding: .25em 0;
 }
 
