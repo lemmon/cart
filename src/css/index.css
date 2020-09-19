@@ -1,7 +1,7 @@
-@import '-cart';
-@import '-buttons';
-@import '-type';
-@import '-products';
+@import 'cart';
+@import 'buttons';
+@import 'type';
+@import 'products';
 
 .cart {
   font-size: 16px;
