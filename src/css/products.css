@@ -59,11 +59,16 @@
   grid-column-end: span 2;
 }
 
-.cart__product__count {
+.cart__product__actions {
   display: flex;
   flex-direction: row;
   grid-column-end: span 3;
   grid-row-start: 3;
+}
+
+.cart__product__count {
+  display: flex;
+  flex-direction: row;
 }
 
 .cart__product__count__increase,
@@ -108,7 +113,7 @@
     white-space: nowrap;
   }
 
-  .cart__product__count {
+  .cart__product__actions {
     grid-column-start: 2;
     grid-column-end: span 1;
     grid-row-start: 2;
