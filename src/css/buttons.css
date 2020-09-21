@@ -1,17 +1,15 @@
 .cart__button {
-  display: block;
   appearance: none;
+  display: block;
+  position: relative;
   margin: 0;
   border: 0;
   padding: 0;
   width: 100%;
   color: inherit;
   background-color: transparent;
-  font-family: inherit;
-  font-size: inherit;
+  font: inherit;
   text-transform: inherit;
-  font-weight: inherit;
-  line-height: inherit;
   text-align: center;
   outline: 0;
   cursor: pointer;
@@ -32,8 +30,41 @@
   height: 1.5em;
 }
 
+.cart__button__loader {
+  display: none;
+}
+
 .cart__button--primary {
   color: #fff;
   background-color: #040404;
   padding: 1em;
+}
+
+.cart__button--loading {
+  cursor: progress;
+  & .cart__button__label {
+    visibility: hidden;
+  }
+  & .cart__button__loader {
+    display: block;
+    position: absolute;
+    left: calc(50% - 1.5rem / 2);
+    top: calc(50% - 1.5rem / 2);
+    width: 1.5em;
+    height: 1.5em;
+    border-width: 2px;
+    border-style: solid;
+    border-color: currentColor currentColor transparent transparent;
+    border-radius: 100%;
+    animation: rotate 0.5s linear infinite;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }

@@ -20,6 +20,11 @@ const cart = Object.assign({
     state.open = false
     cart.render()
   },
+  toJSON: () => ({
+    products: cart.allProducts(),
+    total: cart.productsTotal(),
+    count: cart.productsCount(),
+  }),
 }, products, {
   i18n,
 })

@@ -3,15 +3,15 @@ const format = require('../utils/format')
 const state = require('../state')
 const i18n = require('../i18n')
 const renderProduct = require('./product')
-
-const handleSubmit = e => {
-  e.preventDefault()
-  alert('(o)_(o)')
-  cart.render()
-}
+const {
+  handleCheckout,
+} = require('../actions/checkout')
 
 module.exports = (cart) => html`
-  <form class="cart__form" method=post onsubmit=${handleSubmit}>
+  <form class="cart__form" method=post onsubmit=${e => {
+    e.preventDefault()
+    handleCheckout(cart)
+  }}>
     <div class="cart__products">
       ${cart.allProducts().map(curr => (
         renderProduct(curr, cart)
@@ -25,8 +25,12 @@ module.exports = (cart) => html`
       <div>
         <button
           type=submit
-          class="cart__button cart__button--primary"
-        >${i18n.t('caption.checkout')}</button>
+          class="cart__button ${state.sending ? 'cart__button--loading' : ''} cart__button--primary"
+          disabled=${state.sending}
+        >
+          <span class="cart__button__label">${i18n.t('caption.checkout')}</span>
+          <span class="cart__button__loader"></span>
+        </button>
       </div>
     </div>
   </form>
