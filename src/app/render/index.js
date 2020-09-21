@@ -1,9 +1,8 @@
 const html = require('nanohtml')
 const i18n = require('../i18n')
-const state = require('../state')
 const renderProducts = require('./products')
 
-const renderEmpty = (cart) => html`
+const renderEmpty = (cart, state) => html`
   <div>
     <p>${i18n.t('cart.empty')}</p>
     <p><a
@@ -17,7 +16,7 @@ const renderEmpty = (cart) => html`
   </div>
 `
 
-module.exports = (cart) => html`
+module.exports = (cart, state) => html`
   <div class="cart ${state.open ? 'cart--open' : 'cart--closed'} ${cart.hasProducts() ? 'cart--products' : 'cart--empty'}">
     <div class="cart__overlay" onclick=${cart.hide}></div>
     <div class="cart__container">
@@ -34,8 +33,8 @@ module.exports = (cart) => html`
       </div>
       <div class="cart__content">${
         cart.hasProducts()
-          ? renderProducts(cart)
-          : renderEmpty(cart)
+          ? renderProducts(cart, state)
+          : renderEmpty(cart, state)
       }</div>
     </div>
   </div>

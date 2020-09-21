@@ -6,11 +6,11 @@ const state = require('./state')
 
 const cart = Object.assign({
   init: () => {
-    cart.DOM = render(cart)
+    cart.DOM = render(cart, state)
     document.body.appendChild(cart.DOM)
   },
   render: () => {
-    morph(cart.DOM, render(cart))
+    morph(cart.DOM, render(cart, state))
   },
   show: () => {
     state.open = true

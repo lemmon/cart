@@ -1,20 +1,19 @@
 const html = require('nanohtml')
 const format = require('../utils/format')
-const state = require('../state')
 const i18n = require('../i18n')
 const renderProduct = require('./product')
 const {
   handleCheckout,
 } = require('../actions/checkout')
 
-module.exports = (cart) => html`
+module.exports = (cart, state) => html`
   <form class="cart__form" method=post onsubmit=${e => {
     e.preventDefault()
-    handleCheckout(cart)
+    handleCheckout(cart, state)
   }}>
     <div class="cart__products">
       ${cart.allProducts().map(curr => (
-        renderProduct(curr, cart)
+        renderProduct(curr, cart, state)
       ))}
     </div>
     <div class="cart__summary">

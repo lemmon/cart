@@ -1,6 +1,5 @@
 const md5 = require('md5')
 const store = require('./store')
-const state = require('./state')
 
 const products = loadProducts()
 

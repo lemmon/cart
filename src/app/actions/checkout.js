@@ -1,6 +1,4 @@
-const state = require('../state')
-
-module.exports.handleCheckout = (cart) => {
+module.exports.handleCheckout = (cart, state) => {
   console.log(cart.toJSON())
   state.sending = true
   cart.render()

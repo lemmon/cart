@@ -2,7 +2,7 @@ const html = require('nanohtml')
 const format = require('../utils/format')
 const i18n = require('../i18n')
 
-module.exports = (curr, cart) => html`
+module.exports = (curr, cart, state) => html`
   <article class="cart__product">
     <figure class="cart__product__figure">
       <a href="#"><svg class="cart__image" viewBox="0 0 1 1"></svg></a>
