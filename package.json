@@ -10,9 +10,13 @@
     "w:css": "abrusco src/css -o develop/cart.css --watch",
     "w": "npm run w:app & npm run w:css"
   },
+  "browserslist": [
+    "> 2%",
+    "not dead"
+  ],
   "eslintConfig": {
     "parserOptions": {
-      "ecmaVersion": 2017
+      "ecmaVersion": 2018
     }
   }
 }
