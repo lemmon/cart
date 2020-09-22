@@ -18,12 +18,14 @@ function createProduct(props) {
 
 function addProduct(props) {
   const id = props.id
+  const sku = props.sku
   const name = typeof props.name === 'string' && props.name.trim() || 'unknown product'
   const price = parseNumber(props.price, 0)
   const count = parseNumber(props.count, 1)
-  const hash = md5(`${id}|${name}|${price}`)
+  const hash = md5(`${sku || id || name}|${price}`)
   const product = findProductByHash(hash) || createProduct({
     id,
+    sku,
     name,
     price,
     count: 0,
