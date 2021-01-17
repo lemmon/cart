@@ -1,5 +1,10 @@
 const cart = require('./cart')
 
+if (window.cart) {
+  console.warn('cart already defined')
+  return
+}
+
 window.cart = cart
 
 window.addEventListener('click', e => {
