@@ -1,4 +1,4 @@
-@import 'cart';
-@import 'buttons';
-@import 'type';
-@import 'products';
+@import './cart';
+@import './buttons';
+@import './type';
+@import './products';

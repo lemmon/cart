@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   'action.close': 'close',
   'caption.basket': 'Basket',
   'caption.checkout': 'Checkout',

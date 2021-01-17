@@ -1,33 +1,36 @@
-const cart = require('./cart')
+import cart from './cart'
 
 if (window.cart) {
   console.warn('cart already defined')
-  return
-}
+} else {
+  window.cart = cart
 
-window.cart = cart
-
-window.addEventListener('click', e => {
-  if (!e.target || !e.target.dataset.cartAction) return
-  e.preventDefault()
-  switch (e.target.dataset.cartAction) {
-    case 'show':
-      cart[e.target.dataset.cartAction]()
-      return
-  }
-})
-
-window.addEventListener('submit', e => {
-  if (!e.target || e.target.dataset.cartAction !== 'addtocart') return
-  e.preventDefault()
-  const formData = new FormData(e.target)
-  cart.addProduct({
-    name: formData.get('name'),
-    price: formData.get('price'),
+  window.addEventListener('click', (e) => {
+    if (!e.target || !e.target.dataset.cartAction) return
+    e.preventDefault()
+    switch (e.target.dataset.cartAction) {
+      case 'show':
+        cart[e.target.dataset.cartAction]()
+        return
+    }
   })
-  cart.show()
-})
 
-document.addEventListener('DOMContentLoaded', () => {
-  cart.init()
-}, false)
+  window.addEventListener('submit', (e) => {
+    if (!e.target || e.target.dataset.cartAction !== 'addtocart') return
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    cart.addProduct({
+      name: formData.get('name'),
+      price: formData.get('price'),
+    })
+    cart.show()
+  })
+
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+      cart.init()
+    },
+    false
+  )
+}

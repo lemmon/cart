@@ -1,4 +1,4 @@
-module.exports.handleCheckout = (cart, state) => {
+export function handleCheckout(cart, state) {
   console.log(cart.toJSON())
   state.sending = true
   cart.render()

@@ -1,7 +1,7 @@
 const prefix = 'cart'
 const store = localStorage
 
-module.exports.load = (name) => {
+export function load(name) {
   try {
     return JSON.parse(store.getItem(`${prefix}.${name}`))
   } catch (e) {
@@ -9,6 +9,6 @@ module.exports.load = (name) => {
   }
 }
 
-module.exports.save = (name, data) => {
+export function save(name, data) {
   store.setItem(`${prefix}.${name}`, JSON.stringify(data))
 }

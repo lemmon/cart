@@ -1,5 +1,5 @@
-const md5 = require('md5')
-const store = require('./store')
+import md5 from 'md5'
+import { load, save } from './store'
 
 const products = loadProducts()
 
@@ -19,19 +19,22 @@ function createProduct(props) {
 function addProduct(props) {
   const id = props.id
   const sku = props.sku
-  const name = typeof props.name === 'string' && props.name.trim() || 'unknown product'
+  const name =
+    (typeof props.name === 'string' && props.name.trim()) || 'unknown product'
   const price = parseNumber(props.price, 0)
   const count = parseNumber(props.count, 1)
   const hash = md5(`${sku || id || name}|${price}`)
-  const product = findProductByHash(hash) || createProduct({
-    id,
-    sku,
-    name,
-    price,
-    count: 0,
-    increment: 1,
-    hash,
-  })
+  const product =
+    findProductByHash(hash) ||
+    createProduct({
+      id,
+      sku,
+      name,
+      price,
+      count: 0,
+      increment: 1,
+      hash,
+    })
   product.count += count
   product.total = product.count * product.price
   saveProducts()
@@ -47,7 +50,8 @@ function increaseProductCount(product, increment) {
 
 function decreaseProductCount(product, increment) {
   if (!increment) increment = product.increment
-  product.count = product.count > increment * 2 ? product.count - increment : increment
+  product.count =
+    product.count > increment * 2 ? product.count - increment : increment
   product.total = product.count * product.price
   saveProducts()
 }
@@ -83,18 +87,18 @@ function productsTotal() {
 
 function loadProducts() {
   try {
-    const products = store.load('products')
-    return Array.isArray(products) && new Set(products) || new Set
+    const products = load('products')
+    return (Array.isArray(products) && new Set(products)) || new Set()
   } catch (e) {
-    return new Set
+    return new Set()
   }
 }
 
 function saveProducts() {
-  store.save('products', allProducts())
+  save('products', allProducts())
 }
 
-module.exports = {
+export default {
   allProducts,
   hasProducts,
   addProduct,

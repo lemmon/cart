@@ -1,8 +1,8 @@
-const i18n = require('../i18n')
+import { t } from '../i18n'
 
-module.exports.number = (num, dec = 0) => (
-  num
+export function number(num, dec = 0) {
+  return num
     .toFixed(dec)
-    .replace('.', i18n.t('number.decimalPoint'))
-    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + i18n.t('number.thousandsSeparator'))
-)
+    .replace('.', t('number.decimalPoint'))
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + t('number.thousandsSeparator'))
+}

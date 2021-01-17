@@ -1,10 +1,10 @@
-const morph = require('nanomorph')
-const products = require('./products')
-const i18n = require('./i18n')
-const render = require('./render')
-const state = require('./state')
+import morph from 'nanomorph'
+import products from './products'
+import i18n from './i18n'
+import render from './render'
+import state from './state'
 
-const cart = Object.assign({
+const cart = {
   init: () => {
     cart.DOM = render(cart, state)
     document.body.appendChild(cart.DOM)
@@ -25,8 +25,8 @@ const cart = Object.assign({
     total: cart.productsTotal(),
     count: cart.productsCount(),
   }),
-}, products, {
   i18n,
-})
+  ...products,
+}
 
-module.exports = cart
+export default cart

@@ -26,7 +26,7 @@
   max-width: 100vw;
   color: #040404;
   background-color: #ffeb3b;
-  transition: right .2s;
+  transition: right 0.2s;
   overflow: hidden;
 }
 
@@ -35,12 +35,12 @@
   font-weight: bold;
   text-transform: uppercase;
   &::after {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 1px;
     background-color: currentColor;
-    opacity: .2;
+    opacity: 0.2;
     margin-top: 1em;
   }
 }
@@ -74,12 +74,12 @@
     margin-top: 1em;
   }
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     height: 1px;
     background-color: currentColor;
-    opacity: .2;
+    opacity: 0.2;
     margin-bottom: 1em;
   }
 }

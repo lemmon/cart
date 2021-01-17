@@ -1,11 +1,14 @@
-const phrases = require('./i18n/en_US.js')
+import phrases from './i18n/default.js'
 
-module.exports.t = (name, ...args) => (
-  phrases[name].replace(/%(\d+)/g, (str, p1) => (
-    args[parseInt(p1) - 1]
-  ))
-)
+export function t(name, ...args) {
+  return phrases[name].replace(/%(\d+)/g, (str, p1) => args[parseInt(p1) - 1])
+}
 
-module.exports.translate = (newPhrases) => {
+export function translate(newPhrases) {
   Object.assign(phrases, newPhrases)
+}
+
+export default {
+  t,
+  translate,
 }

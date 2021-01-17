@@ -1,124 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Shopping Cart</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/abrusco@0.9.0/css/abrusco.min.css">
-  <link rel="stylesheet" href="cart.css">
-</head>
-<body class="col py1 sd-p1">
-
-  <header class="max72 p1">
-
-    <div class="row justify-between items-center">
-      <h1 class="h2 lh2 fw700">Shopping Cart Demo</h1>
-      <div class="">
-        <a href="#" data-cart-action="show">show cart</a>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shopping Cart</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/abrusco@0.9.0/css/abrusco.min.css"
+    />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+  <body class="col py1 sd-p1">
+    <header class="max72 p1">
+      <div class="row justify-between items-center">
+        <h1 class="h2 lh2 fw700">Shopping Cart Demo</h1>
+        <div class="">
+          <a href="#" data-cart-action="show">show cart</a>
+        </div>
       </div>
-    </div>
-
-  </header>
-  <main class="span1">
-
-    <div class="products">
-      <div class="max72 grid sd-grid2 md-grid3">
-        <article class="p05">
-          <div class="p025">
+    </header>
+    <main class="span1">
+      <div class="products">
+        <div class="max72 grid sd-grid2 md-grid3">
+          <article class="p05">
             <div class="p025">
-              <figure><svg class="block bg-black-20" viewBox="0 0 1 1"></svg></figure>
+              <div class="p025">
+                <figure>
+                  <svg class="block bg-black-20" viewBox="0 0 1 1"></svg>
+                </figure>
+              </div>
+              <div class="p0125 row justify-between">
+                <div class="p0125 lh3">Product #1</div>
+                <div class="p0125 lh3 ar">12,99</div>
+              </div>
+              <div class="p025">
+                <form data-cart-action="addtocart">
+                  <input type="hidden" name="name" value="Product #1" />
+                  <input type="hidden" name="price" value="12.99" />
+                  <button type="submit" name="button">Add to cart</button>
+                </form>
+              </div>
             </div>
-            <div class="p0125 row justify-between">
-              <div class="p0125 lh3">Product #1</div>
-              <div class="p0125 lh3 ar">12,99</div>
-            </div>
+          </article>
+          <article class="p05">
             <div class="p025">
-              <form data-cart-action="addtocart">
-                <input type="hidden" name="name" value="Product #1">
-                <input type="hidden" name="price" value="12.99">
-                <button type="submit" name="button">Add to cart</button>
-              </form>
+              <div class="p025">
+                <figure>
+                  <svg class="block bg-black-20" viewBox="0 0 1 1"></svg>
+                </figure>
+              </div>
+              <div class="p0125 row justify-between">
+                <div class="p0125 lh3">Product #2</div>
+                <div class="p0125 lh3 ar">0,99</div>
+              </div>
+              <div class="p025">
+                <form data-cart-action="addtocart">
+                  <input type="hidden" name="name" value="Product #2" />
+                  <input type="hidden" name="price" value="0.99" />
+                  <button type="submit" name="button">Add to cart</button>
+                </form>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="p05">
-          <div class="p025">
+          </article>
+          <article class="p05">
             <div class="p025">
-              <figure><svg class="block bg-black-20" viewBox="0 0 1 1"></svg></figure>
+              <div class="p025">
+                <figure>
+                  <svg class="block bg-black-20" viewBox="0 0 1 1"></svg>
+                </figure>
+              </div>
+              <div class="p0125 row justify-between">
+                <div class="p0125 lh3">
+                  Product #3 With Somewhat Long Title That Doesn't Fit In One
+                  Line
+                </div>
+                <div class="p0125 lh3 ar">1099,00</div>
+              </div>
+              <div class="p025">
+                <form data-cart-action="addtocart">
+                  <input
+                    type="hidden"
+                    name="name"
+                    value="Product #3 With Somewhat Long Title That Doesn't Fit In One Line"
+                  />
+                  <input type="hidden" name="price" value="1099.00" />
+                  <button type="submit" name="button">Add to cart</button>
+                </form>
+              </div>
             </div>
-            <div class="p0125 row justify-between">
-              <div class="p0125 lh3">Product #2</div>
-              <div class="p0125 lh3 ar">0,99</div>
-            </div>
+          </article>
+          <article class="p05">
             <div class="p025">
-              <form data-cart-action="addtocart">
-                <input type="hidden" name="name" value="Product #2">
-                <input type="hidden" name="price" value="0.99">
-                <button type="submit" name="button">Add to cart</button>
-              </form>
+              <div class="p025">
+                <figure>
+                  <svg class="block bg-black-20" viewBox="0 0 1 1"></svg>
+                </figure>
+              </div>
+              <div class="p0125 row justify-between">
+                <div class="p0125 lh3">Product #4</div>
+                <div class="p0125 lh3 ar">9,99</div>
+              </div>
+              <div class="p025">
+                <form data-cart-action="addtocart">
+                  <input type="hidden" name="name" value="Product #4" />
+                  <input type="hidden" name="price" value="9.99" />
+                  <button type="submit" name="button">Add to cart</button>
+                </form>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="p05">
-          <div class="p025">
-            <div class="p025">
-              <figure><svg class="block bg-black-20" viewBox="0 0 1 1"></svg></figure>
-            </div>
-            <div class="p0125 row justify-between">
-              <div class="p0125 lh3">Product #3 With Somewhat Long Title That Doesn't Fit In One Line</div>
-              <div class="p0125 lh3 ar">1099,00</div>
-            </div>
-            <div class="p025">
-              <form data-cart-action="addtocart">
-                <input type="hidden" name="name" value="Product #3 With Somewhat Long Title That Doesn't Fit In One Line">
-                <input type="hidden" name="price" value="1099.00">
-                <button type="submit" name="button">Add to cart</button>
-              </form>
-            </div>
-          </div>
-        </article>
-        <article class="p05">
-          <div class="p025">
-            <div class="p025">
-              <figure><svg class="block bg-black-20" viewBox="0 0 1 1"></svg></figure>
-            </div>
-            <div class="p0125 row justify-between">
-              <div class="p0125 lh3">Product #4</div>
-              <div class="p0125 lh3 ar">9,99</div>
-            </div>
-            <div class="p025">
-              <form data-cart-action="addtocart">
-                <input type="hidden" name="name" value="Product #4">
-                <input type="hidden" name="price" value="9.99">
-                <button type="submit" name="button">Add to cart</button>
-              </form>
-            </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
-    </div>
+    </main>
+    <footer class="p1">
+      <p>foot</p>
+    </footer>
 
-  </main>
-  <footer class="p1">
-
-    <p>foot</p>
-
-  </footer>
-
-  <script src="cart.js"></script>
-  <script>
-  cart.i18n.translate({
-    'action.close': 'zatvoriť',
-    'caption.basket': 'Nákupný košík',
-    'caption.checkout': 'K pokladni',
-    'caption.total': 'Spolu',
-    'cart.empty': 'Nákupný košík je prázdny.',
-    'number.decimalPoint': ',',
-    'number.thousandsSeparator': ' ',
-    'price.currency': '%1 EUR',
-    'price.unit': '%1/ks',
-  })
-  </script>
-
-</body>
+    <script src="cart.js"></script>
+    <script>
+      cart.i18n.translate({
+        'action.close': 'zatvoriť',
+        'caption.basket': 'Nákupný košík',
+        'caption.checkout': 'K pokladni',
+        'caption.total': 'Spolu',
+        'cart.empty': 'Nákupný košík je prázdny.',
+        'number.decimalPoint': ',',
+        'number.thousandsSeparator': ' ',
+        'price.currency': '%1 EUR',
+        'price.unit': '%1/ks',
+      })
+    </script>
+  </body>
 </html>
