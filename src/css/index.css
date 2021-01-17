@@ -2,8 +2,3 @@
 @import 'buttons';
 @import 'type';
 @import 'products';
-
-.cart {
-  font-size: 16px;
-  line-height: 1.5;
-}
