@@ -1,4 +1,4 @@
-.cart__button {
+.button {
   appearance: none;
   display: block;
   position: relative;
@@ -19,33 +19,33 @@
   }
 }
 
-.cart__button:focus {
+.button:focus {
   outline: 2px solid #040404;
   outline-offset: 1px;
 }
 
-.cart__button svg {
+.button svg {
   display: block;
   width: 1.5em;
   height: 1.5em;
 }
 
-.cart__button__loader {
+.button__loader {
   display: none;
 }
 
-.cart__button--primary {
+.button--primary {
   color: #fff;
   background-color: #040404;
   padding: 1em;
 }
 
-.cart__button--loading {
+.button--loading {
   cursor: progress;
-  & .cart__button__label {
+  & .button__label {
     visibility: hidden;
   }
-  & .cart__button__loader {
+  & .button__loader {
     display: block;
     position: absolute;
     left: calc(50% - 1.5rem / 2);

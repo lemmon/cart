@@ -1,0 +1,32 @@
+:host {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+:host([open]) {
+  display: block;
+  & .container {
+    right: 0;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  outline: 0;
+}

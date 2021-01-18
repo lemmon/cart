@@ -1,16 +1,19 @@
-import morph from 'nanomorph'
 import products from './products'
 import i18n from './i18n'
-import render from './render'
 import state from './state'
+
+const props = {}
 
 const cart = {
   init: () => {
-    cart.DOM = render(cart, state)
-    document.body.appendChild(cart.DOM)
+    if (props.CART) {
+      console.warn('console already initialized')
+      return
+    }
+    props.CART = document.body.appendChild(<cart-main />)
   },
   render: () => {
-    morph(cart.DOM, render(cart, state))
+    props.CART.render()
   },
   show: () => {
     state.open = true

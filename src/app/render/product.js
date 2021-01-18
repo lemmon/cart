@@ -2,23 +2,23 @@ import { number } from '../utils/format'
 import { t } from '../i18n'
 
 export default (curr, cart, state) => (
-  <article class="cart__product">
-    <figure class="cart__product__figure">
+  <article class="product">
+    <figure class="product__figure">
       <a href="#">
-        <svg class="cart__image" viewBox="0 0 1 1"></svg>
+        <svg class="image" viewBox="0 0 1 1"></svg>
       </a>
     </figure>
-    <div class="cart__product__info">
+    <div class="product__info">
       <h1>
-        <a class="cart__ul:hover" href="#">
+        <a class="ul:hover" href="#">
           {curr.name}
         </a>
       </h1>
     </div>
-    <div class="cart__product__price">
-      <div class="cart__product__remove">
+    <div class="product__price">
+      <div class="product__remove">
         <button
-          class="cart__button cart__product__remove__button"
+          class="button product__remove__button"
           aria-label="Remove Product"
           onclick={(e) => {
             e.preventDefault()
@@ -42,17 +42,17 @@ export default (curr, cart, state) => (
           </svg>
         </button>
       </div>
-      <div class="cart__product__price__total">{number(curr.total, 2)}</div>
+      <div class="product__price__total">{number(curr.total, 2)}</div>
       {curr.count > 1 && (
-        <div class="cart__product__price__unit">
+        <div class="product__price__unit">
           {t('price.unit', number(curr.price, 2))}
         </div>
       )}
     </div>
-    <div class="cart__product__actions">
-      <div class="cart__product__count">
+    <div class="product__actions">
+      <div class="product__count">
         <button
-          class="cart__button cart__product__count__decrease"
+          class="button product__count__decrease"
           aria-label="Decrease Count"
           onclick={(e) => {
             e.preventDefault()
@@ -72,9 +72,9 @@ export default (curr, cart, state) => (
             <line x1="7" y1="12" x2="17" y2="12" />
           </svg>
         </button>
-        <div class="cart__product__count__value">{number(curr.count)}</div>
+        <div class="product__count__value">{number(curr.count)}</div>
         <button
-          class="cart__button cart__product__count__increase"
+          class="button product__count__increase"
           aria-label="Increase Count"
           onclick={(e) => {
             e.preventDefault()

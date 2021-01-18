@@ -1,13 +1,13 @@
-.cart__ul,
-.cart__ul\:hover:hover {
+.ul,
+.ul\:hover:hover {
   text-decoration: underline;
 }
 
-.cart__dt {
+.dt {
   float: left;
   margin-right: 1em;
 }
 
-.cart__dd {
+.dd {
   text-align: right;
 }
