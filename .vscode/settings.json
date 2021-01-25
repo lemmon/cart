@@ -4,6 +4,7 @@
     "node_modules": true
   },
   "search.exclude": {
-    "develop/**": true
+    "public/cart.js": true,
+    "public/cart.js.map": true
   }
 }

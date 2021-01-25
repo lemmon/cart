@@ -1,3 +1,4 @@
 .DS_Store
 node_modules
-develop/cart.js**
+public/cart.js
+public/cart.js.map

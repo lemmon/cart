@@ -18,7 +18,7 @@
     "rollup-plugin-postcss": "^4.0.0"
   },
   "scripts": {
-    "serve": "serve develop",
+    "serve": "sirv public",
     "w": "rollup -c -w"
   }
 }

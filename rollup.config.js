@@ -15,7 +15,7 @@ export default {
   input: 'src/app/index.js',
   output: {
     sourcemap: true,
-    file: 'develop/cart.js',
+    file: 'public/cart.js',
     format: 'iife',
   },
   plugins: [
