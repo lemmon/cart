@@ -3,18 +3,17 @@
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
   width: 100%;
-  height: 100%;
-  display: none;
+  height: 0%;
   font-size: 16px;
   line-height: 1.5;
-}
-
-:host([open]) {
-  display: block;
-  & .container {
-    right: 0;
+  &([open]) {
+    & .overlay {
+      display: block;
+    }
+    & .container {
+      right: 0;
+    }
   }
 }
 
@@ -29,4 +28,32 @@ a {
   text-decoration: none;
   background-color: transparent;
   outline: 0;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(4 4 4 / 40%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -480px;
+  width: 480px;
+  height: 100vh;
+  max-width: 100vw;
+  color: #040404;
+  background-color: #ffeb3b;
+  transition: right 0.2s;
+  overflow: hidden;
 }
