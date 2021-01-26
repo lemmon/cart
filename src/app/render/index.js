@@ -1,23 +1,7 @@
 import { t } from '../i18n'
 import renderProducts from './products'
-
-const renderEmpty = (cart) => (
-  <div class="emptycart">
-    <p>{t('cart.empty')}</p>
-    <p>
-      <a
-        class="ul"
-        href="#"
-        onclick={(e) => {
-          e.preventDefault()
-          cart.hide()
-        }}
-      >
-        {t('action.close')}
-      </a>
-    </p>
-  </div>
-)
+import renderSummary from './summary'
+import renderEmpty from './empty'
 
 export default (cart, state) => (
   <div class="container">
@@ -44,10 +28,8 @@ export default (cart, state) => (
       </div>
       <h1 class="header__title">{t('caption.basket')}</h1>
     </div>
-    <div class="content">
-      {cart.hasProducts()
-        ? renderProducts(cart, state)
-        : renderEmpty(cart, state)}
-    </div>
+    {cart.hasProducts()
+      ? [renderProducts(cart, state), renderSummary(cart, state)]
+      : renderEmpty(cart, state)}
   </div>
 )
