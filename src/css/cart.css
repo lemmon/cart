@@ -1,29 +1,3 @@
-.overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(4 4 4 / 40%);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: -480px;
-  width: 480px;
-  max-width: 100vw;
-  color: #040404;
-  background-color: #ffeb3b;
-  transition: right 0.2s;
-  overflow: hidden;
-}
-
 .header {
   padding: 1em 1em 0;
   font-weight: bold;
@@ -41,18 +15,6 @@
 
 .close {
   float: right;
-}
-
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 
 .products {

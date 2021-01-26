@@ -2,25 +2,28 @@ import products from './products'
 import i18n from './i18n'
 import state from './state'
 
-const props = {}
+const my = {}
 
 const cart = {
   init: () => {
-    if (props.CART) {
+    if (my.$cart) {
       console.warn('cart already initialized')
       return
     }
-    props.CART = document.body.appendChild(<cart-main />)
+    my.$cart = document.body.appendChild(<cart-main />)
   },
   render: () => {
-    props.CART.render()
+    my.$cart.render()
   },
   show: () => {
     state.open = true
+    my.bodyOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
     cart.render()
   },
   hide: () => {
     state.open = false
+    document.body.style.overflow = my.bodyOverflow
     cart.render()
   },
   toJSON: () => ({

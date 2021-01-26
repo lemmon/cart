@@ -23,7 +23,10 @@ function addProduct(props) {
     (typeof props.name === 'string' && props.name.trim()) || 'unknown product'
   const price = parseNumber(props.price, 0)
   const count = parseNumber(props.count, 1)
-  const hash = md5(`${sku || id || name}|${price}`)
+  const variantStr = props.variant
+    ?.reduce((acc, { name, value }) => acc.push(`${name}=${value}`) && acc, [])
+    .join('&')
+  const hash = md5(`${sku || id || name}|${variantStr}|${price}`)
   const product =
     findProductByHash(hash) ||
     createProduct({
@@ -31,6 +34,7 @@ function addProduct(props) {
       sku,
       name,
       price,
+      variant: props.variant,
       count: 0,
       increment: 1,
       hash,

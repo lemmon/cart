@@ -34,11 +34,17 @@
   grid-column-end: span 3;
   grid-row-start: 2;
   width: 100%;
-  & > * {
+  & h1 {
+    font-weight: 600;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
+}
+
+.product__variant {
+  font-size: 0.875em;
+  opacity: 0.6;
 }
 
 .product__price {
@@ -50,12 +56,12 @@
 }
 
 .product__price__total {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .product__price__unit {
   font-size: 0.875em;
-  opacity: 0.5;
+  opacity: 0.6;
   grid-column-end: span 2;
 }
 
