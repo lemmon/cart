@@ -12,10 +12,15 @@ export default (cart) => (
         </figure>
         <div class="product__info">
           <h1>
-            <a class="ul:hover" href="#">
+            <a class="ul" href="#">
               {curr.name}
             </a>
           </h1>
+          {curr.variant && (
+            <div class="product__variant">
+              <p>{curr.variant.map((v) => v.label || v.value).join(', ')}</p>
+            </div>
+          )}
         </div>
         <div class="product__price">
           <div class="product__remove">

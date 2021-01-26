@@ -51,8 +51,28 @@
               </div>
               <div class="p025">
                 <form data-cart-action="addtocart">
+                  <input
+                    type="hidden"
+                    name="id"
+                    value="b64168af-5913-4f27-bb08-306dcdf0cc69"
+                  />
                   <input type="hidden" name="name" value="Product #1" />
                   <input type="hidden" name="price" value="12.99" />
+                  <select name="variant:size" required>
+                    <option value="">veľkosť</option>
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                  </select>
+                  <select name="variant:color" required>
+                    <option value="">farba</option>
+                    <option value="blue">Modrá</option>
+                    <option value="white">Biela</option>
+                    <option value="black">Čierna</option>
+                    <option value="orange">Oranžová</option>
+                  </select>
                   <button type="submit" name="button">Add to cart</button>
                 </form>
               </div>
@@ -71,6 +91,27 @@
               </div>
               <div class="p025">
                 <form data-cart-action="addtocart">
+                  <input
+                    type="hidden"
+                    name="id"
+                    value="1a6ce14e-356a-4b85-92c0-999209c161b6"
+                  />
+                  <label
+                    ><input type="radio" name="variant:size" value="s" />
+                    S</label
+                  >
+                  <label
+                    ><input type="radio" name="variant:size" value="m" />
+                    M</label
+                  >
+                  <label
+                    ><input type="radio" name="variant:size" value="l" />
+                    L</label
+                  >
+                  <label
+                    ><input type="radio" name="variant:size" value="xl" />
+                    XL</label
+                  >
                   <input type="hidden" name="name" value="Product #2" />
                   <input type="hidden" name="price" value="0.99" />
                   <button type="submit" name="button">Add to cart</button>
