@@ -7,7 +7,7 @@ const props = {}
 const cart = {
   init: () => {
     if (props.CART) {
-      console.warn('console already initialized')
+      console.warn('cart already initialized')
       return
     }
     props.CART = document.body.appendChild(<cart-main />)
