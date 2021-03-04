@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import postcssPresetEnv from 'postcss-preset-env'
-import autoprefixer from 'autoprefixer'
 import postcssDiscardComments from 'postcss-discard-comments'
 import postcssDiscardDuplicates from 'postcss-discard-duplicates'
 import cssnano from 'cssnano'
@@ -27,7 +26,6 @@ export default {
         postcssPresetEnv({
           stage: 0,
         }),
-        autoprefixer(),
         postcssDiscardComments(),
         postcssDiscardDuplicates(),
         cssnano({
