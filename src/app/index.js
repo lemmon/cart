@@ -4,7 +4,7 @@ import Main from './components/Main'
 if (window.cart) {
   console.warn('cart already defined')
 } else {
-  customElements.define('cart-main', Main)
+  customElements.define('ala-cart', Main)
 
   window.cart = cart
 

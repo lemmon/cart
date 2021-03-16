@@ -10,7 +10,7 @@ const cart = {
       console.warn('cart already initialized')
       return
     }
-    my.$cart = document.body.appendChild(<cart-main />)
+    my.$cart = document.body.appendChild(<ala-cart />)
   },
   render: () => {
     my.$cart.render()
