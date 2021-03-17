@@ -3,9 +3,6 @@ import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 import postcssPresetEnv from 'postcss-preset-env'
-import postcssDiscardComments from 'postcss-discard-comments'
-import postcssDiscardDuplicates from 'postcss-discard-duplicates'
-import cssnano from 'cssnano'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import inject from '@rollup/plugin-inject'
@@ -21,15 +18,11 @@ export default {
     resolve(),
     postcss({
       inject: false,
+      minimize: true,
       plugins: [
         postcssImport(),
         postcssPresetEnv({
           stage: 0,
-        }),
-        postcssDiscardComments(),
-        postcssDiscardDuplicates(),
-        cssnano({
-          autoprefixer: false,
         }),
       ],
     }),
